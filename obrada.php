@@ -155,7 +155,7 @@ if ($logInSubmit) {
             if ($prepareStatement->execute()) {
                 $_SESSION['username'] = $username;
                 $_SESSION['role'] = 'user';
-                header("Location: index.php")
+                header("Location: index.php");
             } else {
                 echo "Bezuspesno";
             }
