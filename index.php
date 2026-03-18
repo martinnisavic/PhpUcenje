@@ -3,7 +3,7 @@ session_start();
 $ulogovan = false;
 $stranica = '';
 
-// Ovde pazi: u obrada.php si stavljao $_SESSION['username'], pa ovde proveri taj ključ
+
 if (isset($_SESSION['username'])) {
     $ulogovan = true;
 }
