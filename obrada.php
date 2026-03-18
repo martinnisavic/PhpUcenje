@@ -1,5 +1,5 @@
 <?php
-            session_start();
+session_start();
 $regExUsername = '/^[\S]{8,25}$/';
 $regExPassword = '/^[\S]{8,15}$/';
 $regExTelephone = '/^((\+381)6\d\s\d{2}\s\d{2}\s\d{3}|(06)\d\s\d{2}\s\d{2}\s\d{3}|(06)\d-\d{2}-\d{2}-\d{3})$/';
