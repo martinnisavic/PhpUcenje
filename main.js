@@ -7,9 +7,6 @@ var regExEmail = /^[\S]{3,20}@(gmail|yahoo|outlook)\.com$/;
 // 065-20-80-615
 // (a|b|c) (ac|bc) [\d] [+381] \+
 function proveraPodataka(event) {
-    if (event) {
-        event.preventDefault();
-    }
   let email = document.getElementsByName("email")[0].value;
   let username = document.getElementsByName("username")[0].value;
   let password = document.getElementsByName("password")[0].value;

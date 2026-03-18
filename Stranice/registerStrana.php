@@ -3,7 +3,7 @@ echo "
 <div class='form-container'>
     <h2>Registracija Korisnika</h2>
     
-    <form method='post' action='../obrada.php' onsubmit='return proveraPodataka(event)'>
+    <form method='post' action='./obrada.php' onsubmit='return proveraPodataka()'>
         
         <div class='input-group'>
             <label>Korisničko ime:</label>

@@ -1,4 +1,5 @@
 <?php
+            session_start();
 $regExUsername = '/^[\S]{8,25}$/';
 $regExPassword = '/^[\S]{8,15}$/';
 $regExTelephone = '/^((\+381)6\d\s\d{2}\s\d{2}\s\d{3}|(06)\d\s\d{2}\s\d{2}\s\d{3}|(06)\d-\d{2}-\d{2}-\d{3})$/';
@@ -6,8 +7,14 @@ $regExEmail = '/^[\S]{3,20}@(gmail|yahoo|outlook)\.com$/';
 if (isset($_POST['LogInSubmit'])) {
     $logInSubmit = true;
 }
+else {
+    $logInSubmit=false;
+}
 if (isset($_POST['regSubmit'])) {
     $regSubmit = true;
+}
+else {
+    $regSubmit=false;
 }
 
 if ($logInSubmit) {
@@ -16,8 +23,14 @@ if ($logInSubmit) {
         if (isset($_POST['email'])) {
             $email = $_POST['email'];
         }
+        else {
+            echo "Los email";
+        }
         if (isset($_POST['password'])) {
             $pass = $_POST['password'];
+        }
+                else {
+            echo "Los pass";
         }
         $query = "SELECT username,role FROM `users` WHERE email=:email AND password=:password";
         $prepareStatement = $conn->prepare($query);
@@ -26,7 +39,7 @@ if ($logInSubmit) {
         $prepareStatement->execute(); //ovde se izvrasava SQL upit ali tabela rezultata je jos uvek na sql serveru php je ne vidi
         $user = $prepareStatement->fetch(); //ovde preuzimamo podatke 
         if ($user) {
-            session_start();
+
             $_SESSION['role'] = $user['role'];
             $_SESSION['username'] = $user['username'];
             header("Location: index.php");
@@ -140,10 +153,9 @@ if ($logInSubmit) {
             $prepareStatement->bindValue(':role', 'user');
 
             if ($prepareStatement->execute()) {
-                echo "Uspesno";
-                session_start();
                 $_SESSION['username'] = $username;
                 $_SESSION['role'] = 'user';
+                header("Location: index.php")
             } else {
                 echo "Bezuspesno";
             }

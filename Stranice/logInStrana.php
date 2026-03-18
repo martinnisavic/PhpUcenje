@@ -5,7 +5,7 @@
             <form method='post' action='./obrada.php' onsubmit='return proveraPodataka(event)>
                 <div class='input-group'>
                     <label>Email adresa:</label>
-                    <input type='email' name='mail' class='input-field' placeholder='primer@mail.com' required />
+                    <input type='email' name='email' class='input-field' placeholder='primer@mail.com' required />
                 </div>
                 <div class='input-group'>
                     <label>Lozinka:</label>

@@ -40,7 +40,7 @@ if (isset($_GET['stranica'])) {
     <?php else: ?>
         <div>
             <p>Dobrodošli, <strong><?php echo $_SESSION['username']; ?></strong>!</p>
-            <a href="logout.php">Odjavi se</a>
+            <a href="logout.php?">Odjavi se</a>
         </div>
     <?php endif; ?>
 
