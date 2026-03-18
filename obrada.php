@@ -39,7 +39,7 @@ if ($logInSubmit) {
         $prepareStatement->execute(); //ovde se izvrasava SQL upit ali tabela rezultata je jos uvek na sql serveru php je ne vidi
         $user = $prepareStatement->fetch(); //ovde preuzimamo podatke 
         if ($user) {
-
+            
             $_SESSION['role'] = $user['role'];
             $_SESSION['username'] = $user['username'];
             header("Location: index.php");
